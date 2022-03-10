@@ -12,10 +12,13 @@ protocol AddCarDelegate{
     func carVCDidFinishWithCancel();
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,
+                        UIImagePickerControllerDelegate ,
+                        UINavigationControllerDelegate{
 
     var delegate: AddCarDelegate?
     
+    @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var yearText: UITextField!
     @IBOutlet weak var modelText: UITextField!
     
@@ -27,6 +30,14 @@ class ViewController: UIViewController {
     }
 
   
+    @IBAction func addNewPhoto(_ sender: Any) {
+        let c = UIImagePickerController()
+        c.sourceType = .photoLibrary
+        c.allowsEditing = false
+        c.delegate = self
+        present(c, animated: true, completion: nil)
+        
+    }
     @IBAction func cancelClicked(_ sender: Any) {
         delegate?.carVCDidFinishWithCancel()
         dismiss(animated: true, completion: nil)
@@ -45,6 +56,19 @@ class ViewController: UIViewController {
         
     }
                 
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let i = info[.originalImage] as? UIImage{
+            carImage.image = i
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+    }
             
             
         

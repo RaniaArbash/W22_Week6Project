@@ -71,6 +71,28 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEj-Xj-WR5" userLabel="YellowView">
                                 <rect key="frame" x="0.0" y="280.66666666666663" width="414" height="280.66666666666663"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="Xk2-Xr-K8A">
+                                        <rect key="frame" x="74" y="69" width="266" height="143"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="266" id="E7X-Jg-Mhb"/>
+                                            <constraint firstAttribute="height" constant="143" id="yEZ-dZ-xg2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHp-hm-Kb6">
+                                        <rect key="frame" x="118" y="230" width="178" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addNewPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gB-9n-Bbs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Xk2-Xr-K8A" firstAttribute="centerX" secondItem="vEj-Xj-WR5" secondAttribute="centerX" id="Bbt-Uw-zoI"/>
+                                    <constraint firstItem="Xk2-Xr-K8A" firstAttribute="centerY" secondItem="vEj-Xj-WR5" secondAttribute="centerY" id="tfS-Rm-nfv"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVT-R2-cGV" userLabel="RedView">
                                 <rect key="frame" x="0.0" y="561.33333333333337" width="414" height="280.66666666666663"/>
@@ -100,6 +122,7 @@
                     <navigationItem key="navigationItem" id="O1E-Ag-dwU"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="carImage" destination="Xk2-Xr-K8A" id="Ubd-3o-y1r"/>
                         <outlet property="modelText" destination="tZh-DB-A6V" id="XMD-Lk-LQA"/>
                         <outlet property="yearText" destination="9dm-kZ-Lv3" id="Zsc-uX-gc7"/>
                     </connections>
@@ -201,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="photo" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
