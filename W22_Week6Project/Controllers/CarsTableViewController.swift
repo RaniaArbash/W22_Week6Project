@@ -7,12 +7,18 @@
 
 import UIKit
 
-class CarsTableViewController: UITableViewController  {
+class CarsTableViewController: UITableViewController,
+                               AddCarDelegate  {
+        
+    
+    
+   
 
-    var carsListFromFVC = [Car]()
+    var appCarCollection : CarCollection?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        appCarCollection = (UIApplication.shared.delegate as! AppDelegate).carCollection
     }
 
     // MARK: - Table view data source
@@ -22,9 +28,14 @@ class CarsTableViewController: UITableViewController  {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return carsListFromFVC.count
+        return (appCarCollection?.allCars.count)!
     }
     
+    @IBAction func changeColorClicked(_ sender: Any) {
+        
+        view.layer.backgroundColor = UIColor.red.cgColor
+   
+    }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 100
     
@@ -33,16 +44,38 @@ class CarsTableViewController: UITableViewController  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CarTableViewCell
 
-        cell.carModel.text = carsListFromFVC[indexPath.row].model
+        cell.carModel.text = appCarCollection?.allCars[indexPath.row].model
         
-        cell.carYear.text = "\(carsListFromFVC[indexPath.row].year)"
+        if let year = appCarCollection?.allCars[indexPath.row].year{
+            cell.carYear.text = "\(year)"
+        }
         
         cell.carImage.image = UIImage.init(named: "carimg")
         return cell
    
     }
     
+    func carVCDidFinishWithCar(model: String, year: Int) {
+        appCarCollection?.addNewCar(m: model, y: year)
+        tableView.reloadData()
+        let alert = UIAlertController(title: "Car Added!!", message: "Thank You", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { action in
+                           
+                }
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
 
+    }
+    
+    func carVCDidFinishWithCancel() {
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ViewController
+        vc.delegate = self
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ug4-7d-Feq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nc1-Hh-Jr6">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="W22_Week6Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-co-uF8" userLabel="GreenView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="298.66666666666669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="280.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Car Model" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-DB-A6V">
-                                        <rect key="frame" x="139.33333333333331" y="130.66666666666666" width="135.33333333333331" height="37.333333333333343"/>
+                                        <rect key="frame" x="139.33333333333331" y="121.66666666666667" width="135.33333333333331" height="37.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="135.33000000000001" id="739-aF-NwG"/>
                                             <constraint firstAttribute="height" constant="37.329999999999998" id="FcZ-Ea-y0u"/>
@@ -29,7 +29,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Car Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-kZ-Lv3">
-                                        <rect key="frame" x="139.33333333333331" y="189" width="135.33333333333331" height="37.333333333333343"/>
+                                        <rect key="frame" x="139.33333333333331" y="180" width="135.33333333333331" height="37.333333333333343"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="135.33000000000001" id="7xv-I7-To8"/>
                                             <constraint firstAttribute="height" constant="37.329999999999998" id="fm8-cd-rsl"/>
@@ -37,6 +37,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-px-BkI">
+                                        <rect key="frame" x="-1" y="23" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem title="New Car" id="EWA-E8-mxz">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YvT-lV-0IB">
+                                                    <connections>
+                                                        <action selector="cancelClicked:" destination="BYZ-38-t0r" id="utw-xN-DUn"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="done" id="7hZ-hF-gPm">
+                                                    <connections>
+                                                        <action selector="addCar:" destination="BYZ-38-t0r" id="TOi-hF-GoU"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -52,48 +70,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEj-Xj-WR5" userLabel="YellowView">
-                                <rect key="frame" x="0.0" y="298.66666666666663" width="414" height="298.66666666666663"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYc-QG-NSG" customClass="myCustomButton" customModule="W22_Week6Project" customModuleProvider="target">
-                                        <rect key="frame" x="128" y="115" width="158" height="69"/>
-                                        <color key="backgroundColor" red="0.94232535360000003" green="0.40313208099999998" blue="0.4337252378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="69" id="F7e-JT-khX"/>
-                                            <constraint firstAttribute="width" constant="158" id="i2A-5e-5I6"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Add Your Car"/>
-                                        <connections>
-                                            <action selector="addCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2o-jc-32o"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="YYc-QG-NSG" firstAttribute="centerX" secondItem="vEj-Xj-WR5" secondAttribute="centerX" id="8GX-qn-1lm"/>
-                                    <constraint firstItem="YYc-QG-NSG" firstAttribute="centerY" secondItem="vEj-Xj-WR5" secondAttribute="centerY" id="DGc-iO-wHT"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="280.66666666666663" width="414" height="280.66666666666663"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVT-R2-cGV" userLabel="RedView">
-                                <rect key="frame" x="0.0" y="597.33333333333337" width="414" height="298.66666666666663"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3x-4p-AF8" customClass="myCustomButton" customModule="W22_Week6Project" customModuleProvider="target">
-                                        <rect key="frame" x="129" y="118.33333333333326" width="156" height="62"/>
-                                        <color key="backgroundColor" red="0.314891696" green="0.74703139070000002" blue="0.90591984989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="156" id="hpP-Kg-udh"/>
-                                            <constraint firstAttribute="height" constant="62" id="qg5-g8-bN9"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="All Cars"/>
-                                        <connections>
-                                            <segue destination="UcZ-BG-Elm" kind="show" id="65r-0G-a3j"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="b3x-4p-AF8" firstAttribute="centerY" secondItem="XVT-R2-cGV" secondAttribute="centerY" id="7Zy-Fp-bM0"/>
-                                    <constraint firstItem="b3x-4p-AF8" firstAttribute="centerX" secondItem="XVT-R2-cGV" secondAttribute="centerX" id="RJF-lf-EKw"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="561.33333333333337" width="414" height="280.66666666666663"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -116,7 +96,9 @@
                             <constraint firstItem="vEj-Xj-WR5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uyB-lR-Wa4"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="O1E-Ag-dwU"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="modelText" destination="tZh-DB-A6V" id="XMD-Lk-LQA"/>
                         <outlet property="yearText" destination="9dm-kZ-Lv3" id="Zsc-uX-gc7"/>
@@ -124,9 +106,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884.05797101449286" y="26.785714285714285"/>
+            <point key="canvasLocation" x="2844.9275362318845" y="28.794642857142854"/>
         </scene>
-        <!--Cars Table View Controller-->
+        <!--My Cars-->
         <scene sceneID="dpB-dp-PVS">
             <objects>
                 <tableViewController id="UcZ-BG-Elm" customClass="CarsTableViewController" customModule="W22_Week6Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,6 +116,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cMd-Sw-FXL">
+                            <rect key="frame" x="0.0" y="144.33333206176758" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Change Color"/>
+                            <connections>
+                                <action selector="changeColorClicked:" destination="UcZ-BG-Elm" eventType="touchUpInside" id="Vh0-S6-AUR"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="CtE-4V-KpN" customClass="CarTableViewCell" customModule="W22_Week6Project" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="77"/>
@@ -174,29 +165,39 @@
                             <outlet property="delegate" destination="UcZ-BG-Elm" id="Ecq-pD-20e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hNh-iC-I0n"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="qDk-qd-Uem"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="My Cars" id="hNh-iC-I0n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I8v-qY-DAn">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="LIb-Pz-a4M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8n4-mY-SHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757.9710144927537" y="39.508928571428569"/>
+            <point key="canvasLocation" x="1921.7391304347827" y="28.794642857142854"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="oUF-4W-ZQE">
+        <scene sceneID="x3m-GY-foo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ug4-7d-Feq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nc1-Hh-Jr6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Yb-az-agj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2u8-UM-TZf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jiN-9E-3hz"/>
+                        <segue destination="UcZ-BG-Elm" kind="relationship" relationship="rootViewController" id="1ct-LJ-taS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8DF-x4-ZgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44H-JO-aaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.086956521739133" y="26.785714285714285"/>
+            <point key="canvasLocation" x="1011.5942028985507" y="28.794642857142854"/>
         </scene>
     </scenes>
     <resources>
